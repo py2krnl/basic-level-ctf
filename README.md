@@ -37,11 +37,14 @@ dirb http://192.168.1.19/
 After checking **robots.txt**, we realized that there is a file named **secret.lst** thanks to robots.txt and it is most likely a wordlist.
 
 ![robots.txt](images/robots.png)
+
 ![secret.lst](images/secretlst.png)
 
 # Check exploit for open port 22 or 80
 Now we only have a wordlist and the ssh service is open. But we did not investigate whether the service running on port 80 has any vulnerability, let's start researching.
+
 ![exploit](images/exploit.png)
+
 It seems that the Apache HTTP Server 2.4.49 service has a vulnerability. Let's download the code and test it on our target machine. 
 Reference: https://www.exploit-db.com/exploits/50406
 ```
@@ -55,4 +58,24 @@ And in this way, we have detected the user named **h1ddenuser** by reading the /
 
 # SSH Bruteforce
 I will use the **hydra** tool to make a bruteforce attack, you can use any tool you want.
+```
+hydra -l h1ddenuser -P /home/user00/Downloads/secret.lst -t 64 ssh://192.168.1.19
+```
 ![SSH Bruteforce Attack](images/hydra.png)
+We found the password of the user named **h1ddenuser** with a brute-force attack. Let's log in!
+```
+ssh h1ddenuser@192.168.1.19
+```
+![We are in!](images/wearein.png)
+
+# Let's find out what we have
+```
+cd ~
+ls -la
+```
+![User.txt](images/usertxt.png)
+
+2. Q:  user.txt 
+A: THM{se3ms_l1ke_ez_f0r_y0u!}
+
+# Privilege Escalation
