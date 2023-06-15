@@ -79,3 +79,15 @@ ls -la
 A: THM{se3ms_l1ke_ez_f0r_y0u!}
 
 # Privilege Escalation
+Let's try **sudo su**
+```
+sudo su
+```
+![sudo su](images/sudosu.png)
+Aughh failed!
+But it's okay. Let's try **sudo -l**
+```
+sudo -l
+```
+![wget](images/wget.png)
+
