@@ -156,3 +156,6 @@ su root
 ```
 # Pwned
 ![System Pwned!](images/root.png)
+
+3. Q:  root.txt 
+A: THM{w3ll_d0n3_br0_so_3z!}
