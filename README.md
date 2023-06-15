@@ -1,4 +1,5 @@
 
+
 # THM-basiclevelctf-Writeup
 https://tryhackme.com/room/basiclevelctf
 
@@ -76,7 +77,7 @@ ls -la
 ![User.txt](images/usertxt.png)
 
 2. Q:  user.txt 
-A: THM{se3ms_l1ke_ez_f0r_y0u!}
+**A:** ``THM{se3ms_l1ke_ez_f0r_y0u!}``
 
 # Privilege Escalation
 Let's try **sudo su**
@@ -157,5 +158,5 @@ su root
 # Pwned
 ![System Pwned!](images/root.png)
 
-3. Q:  root.txt 
-A: THM{w3ll_d0n3_br0_so_3z!}
+3. Q:  root.txt
+**A:** ``THM{w3ll_d0n3_br0_so_3z!}``
