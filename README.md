@@ -32,3 +32,12 @@ gobuster, dirsearch etc. But In my case I want to use dirb.
 dirb http://[target_ip]
 ```
 ![dirb](images/dirb.png)
+
+# Checking robots.txt
+After checking **robots.txt**, we realized that there is a file named **secret.lst** thanks to robots.txt and it is most likely a wordlist.
+
+![robots](images/robots.png)
+![secretlst](images/secretlst.png)
+
+# Research exploit for open port 22 or 80
+Now we only have a wordlist and the ssh service is open. But we did not investigate whether the service running on port 80 has any vulnerability, let's start researching.
