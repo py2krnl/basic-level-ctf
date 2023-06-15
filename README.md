@@ -84,8 +84,10 @@ Let's try **sudo su**
 sudo su
 ```
 ![sudo su](images/sudosu.png)
+
 Aughh failed!
 But it's okay. Let's try **sudo -l**
+
 ```
 sudo -l
 ```
